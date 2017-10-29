@@ -2,7 +2,6 @@ class Fac
   include Neo4j::ActiveNode
 
   self.mapped_label_name = '学部'
-  property :dep
-  has_many :in, :universities, rel_class: :Has
-
+  property :name
+  has_many :in, :universities, type: :has,model_class: :Uni
 end
